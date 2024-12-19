@@ -15,7 +15,7 @@ export const Warning = () => {
             />
             <path
                 fillRule="evenodd"
-                clip-rule="evenodd"
+                clipRule="evenodd"
                 d="M12 14C12.5523 14 13 13.5523 13 13V8.00001C13 7.44772 12.5523 7.00001 12 7.00001C11.4477 7.00001 11 7.44772 11 8.00001V13C11 13.5523 11.4477 14 12 14Z"
                 fill="#F4F4F5"
             />

@@ -24,7 +24,7 @@ export const SIDEBAR_MENU: SideBarProps[] = [
     },
     {
         id: uuid(),
-        label: 'integration',
+        label: 'integrations',
         icon: <RocketDuoToneWhite />
     },
     {

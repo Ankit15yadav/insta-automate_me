@@ -2,7 +2,7 @@
 
 import { PAGE_BREAD_CURMBS } from '@/constants/pagest'
 import { userPaths } from '@/hooks/user-nav'
-import { Menu, Search } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import React from 'react'
 import Sheet from '../sheet'
 import Items from '../sidebar/items'
@@ -13,6 +13,9 @@ import { SubscriptionPlan } from '../subscription-plan'
 import UpgradeCard from '../sidebar/upgrade'
 import { LogoSmall } from '@/svgs/logo-small'
 import CreateAutomation from '../create-automation'
+import Search from '../search'
+import { Notifications } from '../notifications'
+import MainBreadCrumb from '../main-bread-crumb'
 
 type Props = {
     slug: string
@@ -68,7 +71,11 @@ const Navbar = ({ slug }: Props) => {
             </span>
             <Search />
             <CreateAutomation />
+            <Notifications />
         </div>
+        <MainBreadCrumb page={page === slug ? 'Home' : page}
+            slug={slug}
+        />
     </div>
 }
 

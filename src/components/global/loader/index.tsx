@@ -14,7 +14,7 @@ const Loader = ({ state, className, children, color }: Props) => {
         <div className={cn(className)}>
             <Spinner color={color} />
         </div>
-    ) : null
+    ) : (children)
 }
 
 export default Loader

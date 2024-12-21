@@ -2,7 +2,7 @@ import Navbar from '@/components/global/Navbar'
 import Sidebar from '@/components/global/sidebar'
 import React from 'react'
 import { QueryClient } from "@tanstack/react-query"
-import { prefetchUserProfile } from '@/react-query/pretech'
+import { prefetchUserAutomations, prefetchUserProfile } from '@/react-query/pretech'
 
 type Props = {
     children: React.ReactNode

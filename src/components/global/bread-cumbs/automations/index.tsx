@@ -33,7 +33,7 @@ const AutomationBreadCrumb = ({ id }: Props) => {
                 </p>
                 <div className='flex gap-x-5 flex-shrink-0'>
                     <p className='text-text-secondary text-sm truncate min-w-0'>Changes saved</p>
-                    <p className='text-text-secondary text-sm truncate min-w-0'>Undo | Redo</p>
+                    {/* <p className='text-text-secondary text-sm truncate min-w-0'>Undo | Redo</p> */}
                 </div>
             </div>
             <div>

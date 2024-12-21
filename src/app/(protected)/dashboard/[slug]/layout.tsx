@@ -1,16 +1,24 @@
 import Navbar from '@/components/global/Navbar'
 import Sidebar from '@/components/global/sidebar'
 import React from 'react'
+import { QueryClient } from "@tanstack/react-query"
+import { prefetchUserProfile } from '@/react-query/pretech'
 
 type Props = {
     children: React.ReactNode
     params: { slug: string }
 }
 
-const Layout = ({ children, params }: Props) => {
+const Layout = async ({ children, params }: Props) => {
 
     //Query client
-    //WIP Query client fetch data
+
+    const query = new QueryClient()
+
+    await prefetchUserProfile(query);
+
+    await prefetchUserAutomations(query);
+
 
     return (
         <div className='p-3'>

@@ -1,7 +1,7 @@
 import Navbar from '@/components/global/Navbar'
 import Sidebar from '@/components/global/sidebar'
 import React from 'react'
-import { QueryClient } from "@tanstack/react-query"
+import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query"
 import { prefetchUserAutomations, prefetchUserProfile } from '@/react-query/pretech'
 
 type Props = {
@@ -21,16 +21,21 @@ const Layout = async ({ children, params }: Props) => {
 
 
     return (
-        <div className='p-3'>
-            {/* side bar */}
-            <Sidebar slug={params.slug} />
-            {/* navbar */}
 
-            <div className='lg:ml-[250px] lg:pl-10 lg:py-5 flex flex-col overflow-auto'>
-                <Navbar slug={params.slug} />
-                {children}
+        <HydrationBoundary state={dehydrate(query)}>
+            <div className='p-3'>
+                {/* side bar */}
+                <Sidebar slug={params.slug} />
+                {/* navbar */}
+
+                <div className='lg:ml-[250px] lg:pl-10 lg:py-5 flex flex-col overflow-auto'>
+                    <Navbar slug={params.slug} />
+                    {children}
+                </div>
             </div>
-        </div>
+        </HydrationBoundary>
+
+
     )
 }
 
